@@ -1,0 +1,123 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © 2016 Magento. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceContainer name="header.panel">
+            <block name="phones" class="Magento\Cms\Block\Block" type="cms/block">
+                <arguments>
+                    <argument name="block_id" xsi:type="string">phones</argument>
+                </arguments>
+            </block>
+            <block class="Magento\Framework\View\Element\Html\Links" name="header.links">
+                <arguments>
+                    <argument name="css_class" xsi:type="string">header links</argument>
+                </arguments>
+            </block>
+        </referenceContainer>
+        <referenceBlock name="logo">
+            <arguments>
+                <argument name="logo_img_width" xsi:type="number">203</argument>
+                <argument name="logo_img_height" xsi:type="number">48</argument>
+            </arguments>
+        </referenceBlock>
+
+        <move element="logo" destination="header-wrapper" after="minicart"/>
+        <move element="navigation.sections" destination="header-wrapper" after="logo"/>
+
+        <referenceContainer name="header-wrapper">
+            <block class="Barbaron\FeaturedProducts\Block\ProductList" name="barbaron.featured.list" template="Barbaron_FeaturedProducts::list.phtml"/>
+        </referenceContainer>
+
+        <referenceContainer name="footer">
+            <container name="footer-links-wrapper" label="Footer Links" htmlTag="div" htmlClass="footer-links-wrapper">
+                <container name="footer.links.products" label="Footer Product Links" htmlTag="div" htmlClass="footer-products-links">
+                    <block class="Barbaron\FeaturedProducts\Block\Heading" name="footer.heading.products">
+                        <arguments>
+                            <argument name="heading_size" xsi:type="number">3</argument>
+                            <argument name="label" translate="true" xsi:type="string">Products</argument>
+                        </arguments>
+                    </block>
+                    <block class="Barbaron\FeaturedProducts\Block\ProductList" name="footer.featured.list" template="Barbaron_FeaturedProducts::list.phtml"/>
+                </container>
+
+                <container name="footer.links.category" label="Footer Category Links" htmlTag="div" htmlClass="footer-category-links">
+                    <block class="Barbaron\FeaturedProducts\Block\Heading" name="footer.heading.category">
+                        <arguments>
+                            <argument name="heading_size" xsi:type="number">3</argument>
+                            <argument name="label" translate="true" xsi:type="string">Categories</argument>
+                        </arguments>
+                    </block>
+                    <block class="Magento\Theme\Block\Html\Topmenu" name="catalog.bottomnav" template="html/topmenu.phtml" ttl="3600"/>
+                </container>
+
+                <container name="footer.links.account" label="Footer Account Links" htmlTag="div" htmlClass="footer-account-links" after="footer.links.about">
+                    <block class="Barbaron\FeaturedProducts\Block\Heading" name="footer.heading.account">
+                        <arguments>
+                            <argument name="heading_size" xsi:type="number">3</argument>
+                            <argument name="label" translate="true" xsi:type="string">Account</argument>
+                        </arguments>
+                    </block>
+
+                    <block class="Magento\Framework\View\Element\Html\Links" name="account_links">
+                        <block class="Magento\Framework\View\Element\Html\Link" name="mymaccount.link">
+                            <arguments>
+                                <argument name="label" xsi:type="string" translate="true">My Account</argument>
+                                <argument name="path" xsi:type="string">customer/account</argument>
+                            </arguments>
+                        </block>
+
+                        <block class="Magento\Framework\View\Element\Html\Link" name="mywishlist.link">
+                            <arguments>
+                                <argument name="label" xsi:type="string" translate="true">My Wishlist</argument>
+                                <argument name="path" xsi:type="string">wishlist</argument>
+                            </arguments>
+                        </block>
+
+                        <block class="Magento\Framework\View\Element\Html\Link" name="myorders.link">
+                            <arguments>
+                                <argument name="label" xsi:type="string" translate="true">My Orders</argument>
+                                <argument name="path" xsi:type="string">sales/order/history</argument>
+                            </arguments>
+                        </block>
+
+                        <block class="Magento\Framework\View\Element\Html\Link" name="cart.link">
+                            <arguments>
+                                <argument name="label" xsi:type="string" translate="true">Shopping Cart</argument>
+                                <argument name="path" xsi:type="string">checkout/cart</argument>
+                            </arguments>
+                        </block>
+                    </block>
+                </container>
+
+                <container name="footer.links.about" label="Footer About Links" htmlTag="div" htmlClass="footer-about-links">
+                    <block class="Barbaron\FeaturedProducts\Block\Heading" name="footer.heading.about">
+                        <arguments>
+                            <argument name="heading_size" xsi:type="number">3</argument>
+                            <argument name="label" translate="true" xsi:type="string">About us</argument>
+                        </arguments>
+                    </block>
+                </container>
+            </container>
+            
+            <block class="Magento\Framework\View\Element\Template" name="footer.info" template="Barbaron_FeaturedProducts::footer-info.phtml"/>
+        </referenceContainer>
+
+        <!-- footer about links -->
+        <referenceBlock name="search-term-popular-link" remove="true"/>
+        <referenceBlock name="catalog-search-advanced-link" remove="true"/>
+
+        <move element="footer_links" destination="footer.links.about" after="footer.heading.about"/>
+        <move element="privacy-policy-link" destination="footer_links" after="sales-guest-form-link"/>
+        
+        <block class="Magento\Store\Block\Switcher" name="store_switcher" as="store_switcher" after="footer_links" template="switch/stores.phtml"/>
+        <!-- end footer about links -->
+
+        <referenceBlock name="report.bugs" remove="true"/>
+        <move element="copyright" destination="before.body.end"/>
+    </body>
+</page>

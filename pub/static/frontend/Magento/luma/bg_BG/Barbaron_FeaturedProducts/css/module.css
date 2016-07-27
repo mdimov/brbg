@@ -1,0 +1,1 @@
+div.main ul.products.list.featured{margin: 0 -10px}div.main ul.products.list.featured:after{content: "";display: block;clear: both}div.main ul.products.list.featured li{float: left}div.main ul.products.list.featured li div.product{padding: 10px}

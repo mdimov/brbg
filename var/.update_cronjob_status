@@ -1,0 +1,7 @@
+{
+    "readiness_checks": {
+        "file_permissions_verified": true
+    },
+    "last_timestamp": 1469387102,
+    "current_timestamp": 1469387163
+}

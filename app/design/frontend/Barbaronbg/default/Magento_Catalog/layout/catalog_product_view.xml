@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © 2016 Magento. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<page layout="1column" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceBlock name="product.info.details">
+            <block class="Barbaron\FeaturedProducts\Block\SwatchTab" name="fabrics.tab" template="Barbaron_FeaturedProducts::fabrics.phtml" group="detailed_info">
+                <arguments>
+                    <argument translate="true" name="title" xsi:type="string">Fabrics</argument>
+                </arguments>
+            </block>
+
+            <move element="product.info.overview" destination="product.info.main" before="-" />
+
+            <referenceContainer name="product.info.stock.sku" remove="true"/>
+            <referenceContainer name="product.info.social" remove="true"/>
+            <referenceBlock name="product.info.review" remove="true"/>
+            <referenceBlock name="reviews.tab" remove="true"/>
+        </referenceBlock>
+    </body>
+</page>

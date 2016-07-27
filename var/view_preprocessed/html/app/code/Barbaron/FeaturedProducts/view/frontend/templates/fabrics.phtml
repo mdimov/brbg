@@ -1,0 +1,13 @@
+<?php if($block->getProduct()->getTypeId() == 'configurable'): ?> <?php $attributes = $block->getSwatchAttributes(); $attributeId = -1; $fabrics = array(); $groups = array(); foreach ($attributes as $id => $attribute) { $attributeId = $id; $fabrics = $attribute; break; } foreach ($fabrics as $id => $fabric) { if ( preg_match("/\[([^\[\]]*)\]/", $fabric['label'], $matches) != FALSE ) { if ( !isset($group[$matches[1]]) ) { $group[$matches[1]] = array(); } $fabric['label'] = trim(preg_replace("/\[([^\[\]]*)\]/", "$2", $fabric['label'])); $group[$matches[1]][$id] = $fabric; } } ?> <ul class="fabrics-grouped" fabrics-attribute-id="<?php echo $attributeId; ?>"><?php foreach($group as $groupName => $fabrics): ?> <li> <h4><?php echo $groupName; ?></h4><ul class="fabrics"><?php foreach($fabrics as $id => $fabric): ?> <li> <a href="" fabrics-option-id="<?php echo $id; ?>"><img src="<?php echo $fabric['thumb']; ?>" alt=""/><span class="label"><?php echo $fabric['label']; ?></span></a></li> <?php endforeach; ?></ul></li> <?php endforeach; ?></ul><script type="text/javascript">
+		require(['jquery'], function($) {
+			$('.fabrics-grouped [fabrics-option-id]')
+				.on('click', function(e) {
+					e.preventDefault();
+
+					$('.swatch-attribute[attribute-id=' + $(this).parents('[fabrics-attribute-id]').attr('fabrics-attribute-id') + ']')
+						.find('.swatch-attribute-options [option-id=' + $(this).attr('fabrics-option-id') + ']')
+							.trigger('click');
+
+					$('html, body').animate({scrollTop: $('h1.page-title').offset().top});
+				});
+		});</script><?php endif; ?>

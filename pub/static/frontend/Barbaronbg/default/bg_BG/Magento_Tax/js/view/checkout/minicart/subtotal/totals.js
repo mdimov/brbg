@@ -1,0 +1,1 @@
+/Users/mihaildimov/Sites/barbaron.bg/vendor/magento/module-tax/view/frontend/web/js/view/checkout/minicart/subtotal/totals.js
