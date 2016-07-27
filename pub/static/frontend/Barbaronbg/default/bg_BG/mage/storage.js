@@ -1,1 +1,1 @@
-/Users/mihaildimov/Sites/barbaron.bg/lib/web/mage/storage.js
+/Users/mihaildimov/private/barbaron.bg/lib/web/mage/storage.js

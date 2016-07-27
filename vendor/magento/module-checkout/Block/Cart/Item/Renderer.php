@@ -391,7 +391,6 @@ class Renderer extends \Magento\Framework\View\Element\Template implements
      */
     public function getProductAdditionalInformationBlock()
     {
-        echo 
         return $this->getLayout()->getBlock('additional.product.info');
     }
 

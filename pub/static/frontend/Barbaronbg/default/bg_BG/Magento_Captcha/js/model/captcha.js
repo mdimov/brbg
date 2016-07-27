@@ -1,1 +1,1 @@
-/Users/mihaildimov/Sites/barbaron.bg/vendor/magento/module-captcha/view/frontend/web/js/model/captcha.js
+/Users/mihaildimov/private/barbaron.bg/vendor/magento/module-captcha/view/frontend/web/js/model/captcha.js

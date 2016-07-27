@@ -1,1 +1,1 @@
-/Users/mihaildimov/Sites/barbaron.bg/vendor/magento/module-ui/view/frontend/web/js/view/messages.js
+/Users/mihaildimov/private/barbaron.bg/vendor/magento/module-ui/view/frontend/web/js/view/messages.js

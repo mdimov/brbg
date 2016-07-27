@@ -1,1 +1,1 @@
-/Users/mihaildimov/Sites/barbaron.bg/vendor/magento/module-search/view/frontend/web/form-mini.js
+/Users/mihaildimov/private/barbaron.bg/vendor/magento/module-search/view/frontend/web/form-mini.js

@@ -1,1 +1,1 @@
-/Users/mihaildimov/Sites/barbaron.bg/lib/web/jquery/jquery.parsequery.js
+/Users/mihaildimov/private/barbaron.bg/lib/web/jquery/jquery.parsequery.js

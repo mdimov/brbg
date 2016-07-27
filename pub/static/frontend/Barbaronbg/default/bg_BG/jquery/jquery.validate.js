@@ -1,1 +1,1 @@
-/Users/mihaildimov/Sites/barbaron.bg/lib/web/jquery/jquery.validate.js
+/Users/mihaildimov/private/barbaron.bg/lib/web/jquery/jquery.validate.js

@@ -1,1 +1,1 @@
-/Users/mihaildimov/Sites/barbaron.bg/vendor/magento/module-ui/view/base/web/js/lib/core/storage/local.js
+/Users/mihaildimov/private/barbaron.bg/vendor/magento/module-ui/view/base/web/js/lib/core/storage/local.js

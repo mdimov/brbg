@@ -1,1 +1,1 @@
-/Users/mihaildimov/Sites/barbaron.bg/lib/web/jquery/jquery-ui.js
+/Users/mihaildimov/private/barbaron.bg/lib/web/jquery/jquery-ui.js

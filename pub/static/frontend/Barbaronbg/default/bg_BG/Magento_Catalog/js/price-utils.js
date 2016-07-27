@@ -1,1 +1,1 @@
-/Users/mihaildimov/Sites/barbaron.bg/vendor/magento/module-catalog/view/base/web/js/price-utils.js
+/Users/mihaildimov/private/barbaron.bg/vendor/magento/module-catalog/view/base/web/js/price-utils.js

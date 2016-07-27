@@ -1,1 +1,1 @@
-/Users/mihaildimov/Sites/barbaron.bg/lib/web/jquery/jquery.mobile.custom.js
+/Users/mihaildimov/private/barbaron.bg/lib/web/jquery/jquery.mobile.custom.js

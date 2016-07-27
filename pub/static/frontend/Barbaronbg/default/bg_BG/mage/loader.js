@@ -1,1 +1,1 @@
-/Users/mihaildimov/Sites/barbaron.bg/lib/web/mage/loader.js
+/Users/mihaildimov/private/barbaron.bg/lib/web/mage/loader.js

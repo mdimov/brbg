@@ -65,6 +65,7 @@ $swatchHelper = $objectManager->get("Magento\Swatches\Helper\Media");
                         $swatchCollection->addFieldtoFilter('option_id', $_product->getDamaski());
 
                         $swatchImage = $swatchHelper->getSwatchAttributeImage('swatch_thumb', $swatchCollection->getFirstItem()->getValue());
+                        $swatchImageBig = $swatchHelper->getSwatchAttributeImage('swatch_thumb', $swatchCollection->getFirstItem()->getValue());
                     }
                 ?>
                 <?php /* @escapeNotVerified */ echo($iterator++ == 1) ? '<li class="item product product-item">' : '</li><li class="item product product-item">' ?>
@@ -75,6 +76,8 @@ $swatchHelper = $objectManager->get("Magento\Swatches\Helper\Media");
                         $position = ' style="left:' . $productImage->getWidth() . 'px;'
                             . 'top:' . $productImage->getHeight() . 'px;"';
                     }
+
+                    $productImage->setData('swatchImageBig', $swatchImageBig);
                     ?>
                     <?php // Product Image ?>
                     <a href="<?php /* @escapeNotVerified */ echo $productUrl ?>" class="product photo product-item-photo" tabindex="-1">
@@ -91,7 +94,7 @@ $swatchHelper = $objectManager->get("Magento\Swatches\Helper\Media");
                         <strong class="product name product-item-name">
                             <a class="product-item-link"
                                href="<?php /* @escapeNotVerified */ echo $productUrl ?>">
-                                <?php /* @escapeNotVerified */ echo $_helper->productAttribute($_product, $_product->getName(), 'name'); ?>
+                                <?php /* @escapeNotVerified */ echo str_replace('[', '<br/>[', $_helper->productAttribute($_product, $_product->getName(), 'name')); ?>
                             </a>
                         </strong>
                         <?php //echo $block->getReviewsSummaryHtml($_product, $templateType); ?>

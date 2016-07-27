@@ -1,1 +1,1 @@
-/Users/mihaildimov/Sites/barbaron.bg/app/design/frontend/Barbaronbg/default/Magento_Swatches/web/js/swatch-renderer.js
+/Users/mihaildimov/private/barbaron.bg/app/design/frontend/Barbaronbg/default/Magento_Swatches/web/js/swatch-renderer.js

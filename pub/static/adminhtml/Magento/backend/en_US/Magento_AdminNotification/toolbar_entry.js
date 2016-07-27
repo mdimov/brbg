@@ -1,0 +1,1 @@
+/Users/mihaildimov/private/barbaron.bg/vendor/magento/module-admin-notification/view/adminhtml/web/toolbar_entry.js

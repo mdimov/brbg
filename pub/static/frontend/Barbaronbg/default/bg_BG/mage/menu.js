@@ -1,1 +1,1 @@
-/Users/mihaildimov/Sites/barbaron.bg/lib/web/mage/menu.js
+/Users/mihaildimov/private/barbaron.bg/lib/web/mage/menu.js

@@ -1,1 +1,1 @@
-/Users/mihaildimov/Sites/barbaron.bg/vendor/magento/module-cookie/view/frontend/web/js/require-cookie.js
+/Users/mihaildimov/private/barbaron.bg/vendor/magento/module-cookie/view/frontend/web/js/require-cookie.js

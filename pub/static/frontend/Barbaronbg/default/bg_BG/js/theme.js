@@ -1,1 +1,1 @@
-/Users/mihaildimov/Sites/barbaron.bg/app/design/frontend/Barbaronbg/default/web/js/theme.js
+/Users/mihaildimov/private/barbaron.bg/app/design/frontend/Barbaronbg/default/web/js/theme.js

@@ -1,1 +1,1 @@
-/Users/mihaildimov/Sites/barbaron.bg/vendor/magento/module-wishlist/view/frontend/web/js/add-to-wishlist.js
+/Users/mihaildimov/private/barbaron.bg/vendor/magento/module-wishlist/view/frontend/web/js/add-to-wishlist.js
