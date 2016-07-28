@@ -224,7 +224,7 @@
 }
 
 .hidden {
-	display: none;
+	display: none !important;
 }
 
 small.copyright {
@@ -500,7 +500,7 @@ small.copyright {
 .page-layout-2columns-left {
 	.page-main {
 		.column.main {
-			width: 70%;
+			width: 76%;
 
 			.products {
 				margin: 0 0 30px;
@@ -648,8 +648,155 @@ small.copyright {
 }
 
 .product-items {
-	.price-box,
 	.product-item-name {
-		text-align: center;
+		line-height: 16px;
+
+		.product-item-link {
+			font-size: 12px;
+			font-weight: 700;
+
+			.subtitle {
+				display: block;
+				margin-bottom: 3px;
+
+				color: #888;
+				font-weight: 300;
+			}
+		}
+	}
+
+	.price-box {
+		margin: 0;
+
+		.price {
+			font-size: 12px;
+			font-weight: 400;
+		}
+	}
+}
+
+.products.list.product-items {
+	.product-item-photo {
+		display: block;
+		position: relative;
+		overflow: hidden;
+	}
+}
+
+.block-title.filter-title {
+	border-bottom: 1px solid #e6e6e6;
+
+	margin-top: 20px;
+	margin-bottom: 10px;
+	padding-bottom: 10px;
+
+	font-weight: 500;
+	text-transform: uppercase;
+}
+
+.block-subtitle.filter-subtitle {
+	display: none;
+}
+
+.filter-options {
+	.filter-options-title {
+		font-size: 12px;
+		text-transform: uppercase;
+	}
+
+	.filter-options-content {
+		border-bottom: 1px solid #e6e6e6;
+
+		margin: 0 0 12.5px;
+		padding: 0 0 12.5px;
+
+		a {
+			font-size: 12px;
+
+			&,
+			.count {
+				color: #333;
+			}
+
+			&:hover {
+				text-decoration: none;
+
+				&,
+				.count {
+					color: #ccc;
+				}
+			}
+		}
+	}
+}
+
+.page-main {
+	.page-title {
+		margin-bottom: 20px;
+	}
+}
+
+.page-layout-2columns-left {
+	.page-main {
+		.sidebar-main {
+			.swatch-layered {
+				.swatch-option.image {
+					border-color: #e6e6e6;
+					padding: 0;
+				}
+			}
+		}
+
+		.products.wrapper ~ .toolbar {
+			.pages {
+				float: right;
+
+				.item {
+					line-height: 25px;
+					vertical-align: middle;
+
+					.pages-item-next,
+					.pages-item-prev {
+						vertical-align: top;
+					}
+				}
+
+				strong.page {
+					line-height: inherit;
+				}
+
+				a.page {
+					color: #919191;
+					font-weight: 400;
+
+					&:hover {
+						color: #333;
+						font-weight: 700;
+						text-decoration: none;
+					}
+				}
+
+				.action {
+					height: 24px;
+					width: 24px;
+
+					line-height: 22px;
+
+					&:before {
+						margin: 0 0 0 -5px;
+						font-size: 36px;
+					}
+				}
+			}
+
+			.limiter {
+				float: left;
+
+				select {
+					height: 24px;
+				}
+			}
+		}
+
 	}
 }

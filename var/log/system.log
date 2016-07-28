@@ -225,3 +225,4 @@
 [2016-07-27 14:12:13] main.CRITICAL: Notice: Undefined index: swatch in /Users/mihaildimov/private/barbaron.bg/vendor/magento/module-swatches/Helper/Media.php on line 240 [] []
 [2016-07-27 14:12:31] main.CRITICAL: Notice: Undefined index: swatch_original in /Users/mihaildimov/private/barbaron.bg/vendor/magento/module-swatches/Helper/Media.php on line 240 [] []
 [2016-07-27 14:16:23] main.CRITICAL: Notice: Undefined variable: swatchImageBig in /Users/mihaildimov/private/barbaron.bg/app/design/frontend/Barbaronbg/default/Magento_Catalog/templates/product/image_with_borders.phtml on line 19 [] []
+[2016-07-28 10:19:36] main.CRITICAL: Unable to resolve the source file for 'frontend/Barbaronbg/default/bg_BG/Magento_Catalog/images/product/placeholder/medium_image.jpg' [] []

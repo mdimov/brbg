@@ -53,6 +53,7 @@ $swatchHelper = $objectManager->get("Magento\Swatches\Helper\Media");
                     $pid = $_product->getPid(); 
                     $parentProduct = false;
                     $swatchImage = false;
+                    $swatchImageBig = false;
 
                     if ($pid) {
                         $parentProduct = $objectManager->create('Magento\Catalog\Model\Product')->load($pid);
@@ -60,7 +61,7 @@ $swatchHelper = $objectManager->get("Magento\Swatches\Helper\Media");
 
                     $productUrl = $parentProduct ? $parentProduct->getProductUrl() : $_product->getProductUrl();
  
-                    if ( $_product->getDamaski() ) {
+                    if ( $_product->getDamaski() && $_product->getTypeId() != "configurable" ) {
                         $swatchCollection = $objectManager->create('Magento\Swatches\Model\ResourceModel\Swatch\Collection');
                         $swatchCollection->addFieldtoFilter('option_id', $_product->getDamaski());
 
@@ -94,7 +95,19 @@ $swatchHelper = $objectManager->get("Magento\Swatches\Helper\Media");
                         <strong class="product name product-item-name">
                             <a class="product-item-link"
                                href="<?php /* @escapeNotVerified */ echo $productUrl ?>">
-                                <?php /* @escapeNotVerified */ echo str_replace('[', '<br/>[', $_helper->productAttribute($_product, $_product->getName(), 'name')); ?>
+                                <?php 
+                                    $productName = $_helper->productAttribute($_product, $_product->getName(), 'name');
+
+                                    preg_match('/\[[^\[\]]*\]/', $productName, $matches);
+
+                                    $productName = preg_replace('/(\[[^\[\]]*\])/', '', $productName);
+
+                                    echo $productName;
+
+                                    foreach( $matches as $match ) {
+                                        echo '<span class="subtitle">' . preg_replace('/\[([^\[\]]*)\]/', '$1', $match) . '</span>';
+                                    }
+                                ?>
                             </a>
                         </strong>
                         <?php //echo $block->getReviewsSummaryHtml($_product, $templateType); ?>

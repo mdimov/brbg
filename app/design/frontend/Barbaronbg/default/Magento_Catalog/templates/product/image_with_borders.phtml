@@ -16,23 +16,6 @@
              width="<?php /* @escapeNotVerified */ echo $block->getResizedImageWidth(); ?>"
              height="<?php /* @escapeNotVerified */ echo $block->getResizedImageHeight(); ?>"
              alt="<?php /* @escapeNotVerified */ echo $block->stripTags($block->getLabel(), null, true); ?>"
+             srcimg="<?php echo $block->getImageUrl(); ?>"
              altimg="<?php echo $block->getData('swatchImageBig'); ?>"/></span>
 </span>
-
-<script type="text/javascript">
-	require(['jquery', function($) {
-		$('[altimage]')
-			.on('mouseenter', function() {
-				var imgSrc = $(this).attr('src'),
-					altSrc = $(this).attr('altimg');
-
-				$(this).attr('src', altSrc).attr('altimg', imgSrc);
-			})
-			.on('mouseleave', function() {
-				var imgSrc = $(this).attr('src'),
-					altSrc = $(this).attr('altimg');
-
-				$(this).attr('src', altSrc).attr('altimg', imgSrc);
-			});
-	}]);
-</script>

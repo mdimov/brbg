@@ -1,0 +1,1 @@
+/Users/mihaildimov/private/barbaron.bg/vendor/magento/module-product-video/view/frontend/web/js/load-player.js

@@ -30,4 +30,28 @@ define([
     $('.panel.header > .header.links').clone().appendTo('#store\\.links');
 
     keyboardHandler.apply();
+
+    $('.product-item-photo')
+            .on('mouseenter', function() {
+                var el = $('[altimg]', this),
+                    swatch = $('.swatch-tri-wrap', this),
+                    imgSrc = el.attr('srcimg'),
+                    altSrc = el.attr('altimg');
+
+                if ( el.length > 0 && altSrc ) {
+                    el.attr('src', altSrc);
+                    swatch.addClass('hidden');
+                }
+            })
+            .on('mouseleave', function() {
+                var el = $('[altimg]', this),
+                    swatch = $('.swatch-tri-wrap', this),
+                    imgSrc = el.attr('srcimg'),
+                    altSrc = el.attr('altimg');
+
+                if ( el.length > 0 && altSrc ) {
+                    el.attr('src', imgSrc);
+                    swatch.removeClass('hidden');
+                }
+            });
 });
