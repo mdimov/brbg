@@ -1,1 +1,22 @@
-/Users/mihaildimov/private/barbaron.bg/vendor/magento/module-ui/view/base/web/js/lib/knockout/bootstrap.js
+/**
+ * Copyright © 2016 Magento. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+/** Loads all available knockout bindings, sets custom template engine, initializes knockout on page */
+
+define([
+    'ko',
+    './template/engine',
+    'knockoutjs/knockout-es5',
+    './bindings/bootstrap',
+    './extender/observable_array',
+    './extender/bound-nodes',
+    'domReady!'
+], function (ko, templateEngine) {
+    'use strict';
+
+    ko.uid = 0;
+
+    ko.setTemplateEngine(templateEngine);
+    ko.applyBindings();
+});

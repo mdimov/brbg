@@ -7,7 +7,7 @@
             "responseType": "success",
             "data": {
                 "required": "~5.6.0|7.0.2|~7.0.6",
-                "current": "7.0.8"
+                "current": "7.0.9"
             }
         },
         "php_extensions_verified": {
@@ -165,6 +165,6 @@
         ],
         "error": ""
     },
-    "last_timestamp": 1469387107,
-    "current_timestamp": 1469387175
+    "last_timestamp": 1469992626,
+    "current_timestamp": 1469992685
 }

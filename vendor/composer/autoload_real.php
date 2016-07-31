@@ -27,25 +27,36 @@ class ComposerAutoloaderInitfe4d619b535c8cfd47931d99062bdcfc
         array_push($includePaths, get_include_path());
         set_include_path(join(PATH_SEPARATOR, $includePaths));
 
-        $map = require __DIR__ . '/autoload_namespaces.php';
-        foreach ($map as $namespace => $path) {
-            $loader->set($namespace, $path);
-        }
+        $useStaticLoader = PHP_VERSION_ID >= 50600 && !defined('HHVM_VERSION');
+        if ($useStaticLoader) {
+            require_once __DIR__ . '/autoload_static.php';
 
-        $map = require __DIR__ . '/autoload_psr4.php';
-        foreach ($map as $namespace => $path) {
-            $loader->setPsr4($namespace, $path);
-        }
+            call_user_func(\Composer\Autoload\ComposerStaticInitfe4d619b535c8cfd47931d99062bdcfc::getInitializer($loader));
+        } else {
+            $map = require __DIR__ . '/autoload_namespaces.php';
+            foreach ($map as $namespace => $path) {
+                $loader->set($namespace, $path);
+            }
 
-        $classMap = require __DIR__ . '/autoload_classmap.php';
-        if ($classMap) {
-            $loader->addClassMap($classMap);
+            $map = require __DIR__ . '/autoload_psr4.php';
+            foreach ($map as $namespace => $path) {
+                $loader->setPsr4($namespace, $path);
+            }
+
+            $classMap = require __DIR__ . '/autoload_classmap.php';
+            if ($classMap) {
+                $loader->addClassMap($classMap);
+            }
         }
 
         $loader->setUseIncludePath(true);
         $loader->register(true);
 
-        $includeFiles = require __DIR__ . '/autoload_files.php';
+        if ($useStaticLoader) {
+            $includeFiles = Composer\Autoload\ComposerStaticInitfe4d619b535c8cfd47931d99062bdcfc::$files;
+        } else {
+            $includeFiles = require __DIR__ . '/autoload_files.php';
+        }
         foreach ($includeFiles as $fileIdentifier => $file) {
             composerRequirefe4d619b535c8cfd47931d99062bdcfc($fileIdentifier, $file);
         }

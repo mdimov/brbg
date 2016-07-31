@@ -92,7 +92,7 @@
             <block class="Magento\Catalog\Block\Category\Rss\Link" name="rss.link" template="Magento_Catalog::category/rss.phtml"/>
         </referenceBlock>
 
-        <move element="breadcrumbs" destination="content" before="category.products"/>
+        <!-- <move element="breadcrumbs" destination="content" before="category.products"/> -->
         <move element="page.main.title" destination="content" before="-"/>
     </body>
 </page>

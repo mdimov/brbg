@@ -38,19 +38,20 @@ return array (
   'MAGE_MODE' => 'default',
   'cache_types' => 
   array (
-    'config' => 0,
-    'layout' => 0,
-    'block_html' => 0,
+    'config' => 1,
+    'layout' => 1,
+    'block_html' => 1,
     'collections' => 1,
     'reflection' => 1,
     'db_ddl' => 1,
     'eav' => 1,
     'config_integration' => 1,
     'config_integration_api' => 1,
-    'full_page' => 0,
-    'translate' => 0,
+    'full_page' => 1,
+    'translate' => 1,
     'config_webservice' => 1,
     'compiled_config' => 1,
+    'customer_notification' => 1,
   ),
   'install' => 
   array (

@@ -30,6 +30,45 @@ class Interceptor extends \Magento\Customer\Model\ResourceModel\CustomerReposito
     /**
      * {@inheritdoc}
      */
+    public function get($email, $websiteId = null)
+    {
+        $pluginInfo = $this->pluginList->getNext($this->subjectType, 'get');
+        if (!$pluginInfo) {
+            return parent::get($email, $websiteId);
+        } else {
+            return $this->___callPlugins('get', func_get_args(), $pluginInfo);
+        }
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function getById($customerId)
+    {
+        $pluginInfo = $this->pluginList->getNext($this->subjectType, 'getById');
+        if (!$pluginInfo) {
+            return parent::getById($customerId);
+        } else {
+            return $this->___callPlugins('getById', func_get_args(), $pluginInfo);
+        }
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function getList(\Magento\Framework\Api\SearchCriteriaInterface $searchCriteria)
+    {
+        $pluginInfo = $this->pluginList->getNext($this->subjectType, 'getList');
+        if (!$pluginInfo) {
+            return parent::getList($searchCriteria);
+        } else {
+            return $this->___callPlugins('getList', func_get_args(), $pluginInfo);
+        }
+    }
+
+    /**
+     * {@inheritdoc}
+     */
     public function delete(\Magento\Customer\Api\Data\CustomerInterface $customer)
     {
         $pluginInfo = $this->pluginList->getNext($this->subjectType, 'delete');

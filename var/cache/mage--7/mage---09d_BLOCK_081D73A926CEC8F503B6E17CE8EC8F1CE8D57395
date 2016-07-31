@@ -1,0 +1,6 @@
+a:4:{s:4:"hash";s:0:"";s:5:"mtime";i:1469976925;s:6:"expire";i:1469980525;s:4:"tags";s:139:"09d_BLOCK_HTML,09d_CATALOG_CATEGORY,09d_CATALOG_CATEGORY_3,09d_CATALOG_CATEGORY_12,09d_CATALOG_CATEGORY_13,09d_CATALOG_CATEGORY_14,09d_MAGE";}
+
+<nav class="navigation" data-action="navigation">
+    <ul data-mage-init='{"menu":{"responsive":true, "expanded":true, "position":{"my":"left top","at":"left bottom"}}}'>
+        <li  class="level0 nav-1 first level-top"><a href="http://dev.barbaron.bg/pufove.html"  class="level-top" ><span>Пуфове</span></a></li><li  class="level0 nav-2 level-top"><a href="http://dev.barbaron.bg/taburetki.html"  class="level-top" ><span>Табуретки</span></a></li><li  class="level0 nav-3 active level-top"><a href="http://dev.barbaron.bg/moduli.html"  class="level-top" ><span>Модули</span></a></li><li  class="level0 nav-4 last level-top"><a href="http://dev.barbaron.bg/modulni-divani.html"  class="level-top" ><span>Модулни дивани</span></a></li>            </ul>
+</nav>

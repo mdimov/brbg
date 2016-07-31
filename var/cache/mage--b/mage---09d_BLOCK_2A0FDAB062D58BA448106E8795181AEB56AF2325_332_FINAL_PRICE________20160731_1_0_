@@ -1,0 +1,14 @@
+a:4:{s:4:"hash";s:0:"";s:5:"mtime";i:1469976895;s:6:"expire";i:1469980495;s:4:"tags";s:67:"09d_BLOCK_HTML,09d_CATALOG_PRODUCT_332,09d_CATALOG_PRODUCT,09d_MAGE";}
+<div class="price-box price-final_price" data-role="priceBox" data-product-id="332">
+    
+
+<span class="price-container price-final_price tax weee"
+        >
+        <span  id="product-price-332"                data-price-amount="55"
+        data-price-type="finalPrice"
+        class="price-wrapper "
+        >
+        <span class="price">55,00 лв.</span>    </span>
+        </span>
+
+</div>

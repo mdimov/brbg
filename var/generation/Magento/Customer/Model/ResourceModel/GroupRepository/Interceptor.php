@@ -30,6 +30,32 @@ class Interceptor extends \Magento\Customer\Model\ResourceModel\GroupRepository 
     /**
      * {@inheritdoc}
      */
+    public function getById($id)
+    {
+        $pluginInfo = $this->pluginList->getNext($this->subjectType, 'getById');
+        if (!$pluginInfo) {
+            return parent::getById($id);
+        } else {
+            return $this->___callPlugins('getById', func_get_args(), $pluginInfo);
+        }
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function getList(\Magento\Framework\Api\SearchCriteriaInterface $searchCriteria)
+    {
+        $pluginInfo = $this->pluginList->getNext($this->subjectType, 'getList');
+        if (!$pluginInfo) {
+            return parent::getList($searchCriteria);
+        } else {
+            return $this->___callPlugins('getList', func_get_args(), $pluginInfo);
+        }
+    }
+
+    /**
+     * {@inheritdoc}
+     */
     public function delete(\Magento\Customer\Api\Data\GroupInterface $group)
     {
         $pluginInfo = $this->pluginList->getNext($this->subjectType, 'delete');

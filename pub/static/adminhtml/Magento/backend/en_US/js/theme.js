@@ -1,1 +1,0 @@
-/Users/mihaildimov/private/barbaron.bg/vendor/magento/theme-adminhtml-backend/web/js/theme.js

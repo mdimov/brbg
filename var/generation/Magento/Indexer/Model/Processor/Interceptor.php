@@ -30,6 +30,19 @@ class Interceptor extends \Magento\Indexer\Model\Processor implements \Magento\F
     /**
      * {@inheritdoc}
      */
+    public function reindexAll()
+    {
+        $pluginInfo = $this->pluginList->getNext($this->subjectType, 'reindexAll');
+        if (!$pluginInfo) {
+            return parent::reindexAll();
+        } else {
+            return $this->___callPlugins('reindexAll', func_get_args(), $pluginInfo);
+        }
+    }
+
+    /**
+     * {@inheritdoc}
+     */
     public function updateMview()
     {
         $pluginInfo = $this->pluginList->getNext($this->subjectType, 'updateMview');
@@ -37,6 +50,19 @@ class Interceptor extends \Magento\Indexer\Model\Processor implements \Magento\F
             return parent::updateMview();
         } else {
             return $this->___callPlugins('updateMview', func_get_args(), $pluginInfo);
+        }
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function clearChangelog()
+    {
+        $pluginInfo = $this->pluginList->getNext($this->subjectType, 'clearChangelog');
+        if (!$pluginInfo) {
+            return parent::clearChangelog();
+        } else {
+            return $this->___callPlugins('clearChangelog', func_get_args(), $pluginInfo);
         }
     }
 }

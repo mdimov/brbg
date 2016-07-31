@@ -625,8 +625,8 @@ small.copyright {
 
 	.swatch-tri-wrap-inner {
 		position: relative;
-	    width: 160px;
-	    height: 160px;
+	    width: 166px;
+	    height: 166px;
 	    margin: 0;
 	    display: block;
 	    overflow: hidden;
@@ -700,15 +700,27 @@ small.copyright {
 
 .filter-options {
 	.filter-options-title {
+		clear: both;
+		
 		font-size: 12px;
 		text-transform: uppercase;
 	}
 
 	.filter-options-content {
 		border-bottom: 1px solid #e6e6e6;
+		clear: both;
 
 		margin: 0 0 12.5px;
 		padding: 0 0 12.5px;
+
+		.swatch-attribute-options {
+			&:after {
+				clear: both;
+				content: '';
+
+				display: block;
+			}
+		}
 
 		a {
 			font-size: 12px;
@@ -798,5 +810,56 @@ small.copyright {
 			}
 		}
 
+	}
+}
+
+.checkout-cart-index {
+	.price-excluding-tax {
+		font-size: 1.4rem;
+	}
+}
+
+.cart.table-wrapper .action-gift {
+	display: none;
+}
+
+.action.multicheckout {
+	display: none;
+}
+
+.cart-container .checkout-methods-items .item + .item {
+	margin: 0
+}
+
+.column.main {
+	.cart-summary {
+		.block {
+			& > .title strong {
+				font-size: 1.4rem;
+			}
+		}
+	}
+
+	.paypal-review-discount {
+		.block  {
+			> .title strong {
+				font-size: 1.4rem;
+			}
+		}
+	} 
+}
+
+.product-info-main, 
+.product-options-bottom {
+	.box-tocart {
+		.field.qty {
+			display: none !important;
+		}
+	}
+
+	.product.attribute {
+		& > strong.type {
+			display: none;
+		}
 	}
 }

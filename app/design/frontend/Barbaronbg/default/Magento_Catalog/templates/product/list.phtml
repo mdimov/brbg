@@ -61,12 +61,24 @@ $swatchHelper = $objectManager->get("Magento\Swatches\Helper\Media");
 
                     $productUrl = $parentProduct ? $parentProduct->getProductUrl() : $_product->getProductUrl();
  
-                    if ( $_product->getDamaski() && $_product->getTypeId() != "configurable" ) {
+                    if ( $_product->getZdamaski() && $_product->getTypeId() != "configurable" ) {
+                        // $productUrl .= "?zdamaski=" . $_product->getZdamaski();
                         $swatchCollection = $objectManager->create('Magento\Swatches\Model\ResourceModel\Swatch\Collection');
-                        $swatchCollection->addFieldtoFilter('option_id', $_product->getDamaski());
+                        $swatchCollection->addFieldtoFilter('option_id', $_product->getZdamaski());
+
+                        // var_dump($_product->getData());
 
                         $swatchImage = $swatchHelper->getSwatchAttributeImage('swatch_thumb', $swatchCollection->getFirstItem()->getValue());
                         $swatchImageBig = $swatchHelper->getSwatchAttributeImage('swatch_thumb', $swatchCollection->getFirstItem()->getValue());
+
+                        if ( $parentProduct ) {
+                            $params = array();
+                            foreach ($parentProduct->getTypeInstance()->getConfigurableAttributes($parentProduct) as $attribute) {
+                                $attribute->getProductAttribute()->getData();
+                                $params[] = $attribute->getProductAttribute()->getAttributeCode() . '=' . $_product->getData()[$attribute->getProductAttribute()->getAttributeCode()];
+                            }
+                            $productUrl .= "?" . implode('&', $params);
+                        }
                     }
                 ?>
                 <?php /* @escapeNotVerified */ echo($iterator++ == 1) ? '<li class="item product product-item">' : '</li><li class="item product product-item">' ?>
@@ -98,14 +110,16 @@ $swatchHelper = $objectManager->get("Magento\Swatches\Helper\Media");
                                 <?php 
                                     $productName = $_helper->productAttribute($_product, $_product->getName(), 'name');
 
-                                    preg_match('/\[[^\[\]]*\]/', $productName, $matches);
+                                    preg_match_all('/\[[^\[\]]*\]/', $productName, $matches);
 
                                     $productName = preg_replace('/(\[[^\[\]]*\])/', '', $productName);
 
                                     echo $productName;
 
-                                    foreach( $matches as $match ) {
-                                        echo '<span class="subtitle">' . preg_replace('/\[([^\[\]]*)\]/', '$1', $match) . '</span>';
+                                    if (isset($matches[0]) && is_array($matches)) {
+                                        foreach( $matches[0] as $match ) {
+                                            echo '<span class="subtitle">' . preg_replace('/\[([^\[\]]*)\]/', '$1', $match) . '</span>';
+                                        }
                                     }
                                 ?>
                             </a>

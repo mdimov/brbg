@@ -9,13 +9,13 @@
     <media>
         <images module="Magento_Catalog">
             <image id="category_page_grid" type="image">
-                <width>330</width>
-                <height>412</height>
+                <width>332</width>
+                <height>332</height>
             </image>
 
             <image id="product_small_image" type="small_image">
-                <width>135</width>
-                <height>135</height>
+                <width>166</width>
+                <height>166</height>
             </image>
 
             <image id="product_thumbnail_image" type="thumbnail">

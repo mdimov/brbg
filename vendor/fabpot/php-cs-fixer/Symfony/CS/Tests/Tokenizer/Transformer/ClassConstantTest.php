@@ -42,6 +42,16 @@ class ClassConstantTest extends AbstractTransformerTestBase
                 ),
             ),
             array(
+                '<?php echo X::cLaSS;',
+                array(
+                    5 => 'CT_CLASS_CONSTANT',
+                ),
+            ),
+            array(
+                '<?php echo X::bar;',
+                array(),
+            ),
+            array(
                 '<?php class X{}',
                 array(),
             ),
